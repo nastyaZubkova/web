@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTf-8">
   <title>Title</title>
+  <link href="css/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <header>
-    <a href="index.html">Escape.</a>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Categories</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
+  <header class="header header_article">
+    <a class="header__logo" href="#">Escape.</a>
+    <nav class="header-menu">
+      <a class="header-menu__element" href="#">Home</a> 
+      <a class="header-menu__element" href="#">Categories</a>
+      <a class="header-menu__element" href="#">About</a>
+      <a class="header-menu__element" href="#">Contact</a>
     </nav>
   </header>
-
-  <article>
-    <h2>The Road Ahead</h2>
-    <p>The road ahead might be paved - it might not be.</p>
-    <img src="../web/images/background_article_northem_lights.jpg" alt="Northern light image">
-    <p>
+  <article class="article">
+    <div class="article-head">
+      <h1 class="article__title">The Road Ahead</h1>
+      <p class="article__qoute">The road ahead might be paved - it might not be.</p>
+      <img src="images/background_article_northem_lights.jpg" alt="Northern light image">
+    </div>
+    <p class="article__paragraph">
         Dark spruce forest frowned on either side the frozen waterway. The trees had been stripped by a recent wind
         of their white covering of frost, and they seemed to lean towards each other, black and ominous, in the fading
         light. A vast silence reigned over the land. The land itself was a desolation, lifeless, without movement,
@@ -32,7 +34,7 @@
         frozen-hearted
         Northland Wild.
     </p>
-    <p>
+    <p class="article__paragraph">
         But there was life, abroad in the land and defiant. Down the frozen waterway toiled a string of wolfish
         dogs. Their bristly fur was rimed with frost. Their breath froze in the air as it left their mouths, spouting
         forth in spumes of vapour that settled upon the hair of their bodies and formed into crystals of frost. Leather
@@ -43,7 +45,7 @@
         sled—blankets, an axe, and a coffee-pot and frying-pan; but prominent, occupying most of the space, was the
         long and narrow oblong box.
     </p>
-    <p>
+    <p class="article__paragraph">
         In advance of the dogs, on wide snowshoes, toiled a man. At the rear of the sled toiled a second man. On the
         sled, in the box, lay a third man whose toil was over,—a man whom the Wild had conquered and beaten down
         until he would never move nor struggle again. It is not the way of the Wild to like movement. Life is an offence
@@ -53,7 +55,7 @@
         restless of life, ever in revolt against the dictum that all movement must in the end come to the cessation of
         movement.
     </p>
-    <p>
+    <p class="article__paragraph">
         But at front and rear, unawed and indomitable, toiled the two men who were not yet dead. Their bodies were
         covered with fur and soft-tanned leather. Eyelashes and cheeks and lips were so coated with the crystals
         from their frozen breath that their faces were not discernible. This gave them the seeming of ghostly masques,
@@ -62,16 +64,14 @@
         against the might of a world as remote and alien and pulseless as the abysses of space.
     </p>
   </article>
-  <footer>
-    <img src="../web/images/background_footer.jpg" alt="background footer">
-    <a href="index.html">Escape.</a>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Categories</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
+  <footer class="footer">
+    <a class="footer__logo" href="index.html">Escape.</a>
+    <nav class="footer__menu">
+      <a class="footer-menu__element" href="#">Home</a>
+      <a class="footer-menu__element" href="#">Categories</a>
+      <a class="footer-menu__element" href="#">About</a>
+      <a class="footer-menu__element" href="#">Contact</a>
     </nav>
   </footer>
 </body>
-
 </html>

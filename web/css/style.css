@@ -1,0 +1,176 @@
+body {
+    background-color: #F7F7F7;
+}
+
+.header_article {
+    background-color: #F5F5F5;
+}
+
+.background-article-mountains {
+    background: url(../images/background_article_mountains.jpg) no-repeat;
+    height: 500px;
+    width: 1440px;
+}
+
+.header__logo {
+    font: 400 26px/1 "Lora";
+    color: #2E2E2E;
+    text-decoration: none; 
+}
+
+.header-menu__element {
+    font: 400 20px/1.6 "Oxygen";
+    color: #2E2E2E;
+    text-decoration: none;
+}
+
+.background-article-mountains .header__logo {
+    color: #FFFFFF;
+}
+
+.background-article-mountains .header-menu__element {
+    color: #FFFFFF;
+}
+
+.top-block__title {
+    font: 400 50px/1.02 "Lora";
+    color: #FFFFFF;
+}
+
+.top-block__quote {
+    font: 400 17px/1.18 "Oxygen";
+    color: #FFFFFF;
+}
+
+.top-block__button {
+    font: 400 13px/1.5 "Oxygen";
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #DD783F;
+    border: 3px solid #DD783F;
+}
+
+.average-menu {
+    background-color: #ffffff;
+    height: 65px;
+    width: 1440px;
+}
+
+.average-menu__element {
+    font: 400 14px/1.4 "Lora";
+    text-decoration: none;
+}
+
+.table-of-contents {
+    font: 400 20px/1.35 "Oxygen";
+    width: 161px; 
+    height: 27px; 
+    border-bottom: 1px solid #DEDEDE;
+}
+
+.table-of-contents-blocks .block__date {
+    color: #FFFFFF;
+}
+
+.block_left
+{
+    background: url(../images/the_road_ahead.jpg) no-repeat;
+    height: 280px; 
+}
+
+.block_right{
+    background: url(../images/from_top_down.jpg) no-repeat;
+    height: 280px;
+}
+
+.block__posts-name {
+    font: 400 27px/1.11 "Lora";
+    color: #FFFFFF;
+}
+
+.block__description-featured-posts
+{
+    font: 400 14px/1.78 "Oxygen";
+    color: #FFFFFF;
+}
+
+.block-authors-image {
+    border-radius: 50%;
+}
+
+.block__names-autors-featured-posts {
+    font: 400 11px/3.18 "Oxygen";
+    color: #FFFFFF;
+}
+
+.block__recents-posts-name {
+    font: 400 16px/1.3125 "Lora";
+    color: #101315;
+}
+
+.block {
+    height: 291px; 
+    background-color: #FFFFFF;
+    border: 3px solid #F7F7F7;
+    width: 296px; 
+}
+
+.block-authors-date {
+    height: 48px; 
+    background-color: #FCFCFC;
+    border: 1px solid #F7F7F7;
+}
+
+.block__description-resents-posts
+{
+    font: 400 13px/1.46 "Oxygen";
+    color: #7A7A7A;
+}
+
+.block__names-autors-resents-posts {
+    font: 400 12px/2.91 "Oxygen";
+    color: #999999;
+}
+
+.block__date
+{
+    font: 400 12px/2.91 "Oxygen";
+    color: #999999;
+}
+
+.article-head {
+    background-color: #F5F5F5;
+}
+
+.article__title {
+    font: 400 50px/1.02 "Lora";
+    color: #2E2E2E;
+}
+
+.article__qoute{
+    font: 400 17px/1.17 "Oxygen";
+    color: #2E2E2E;
+}
+
+.article__paragraph{
+    font: 400 24px/1.46 "Oxygen";
+    color: #101315;
+}
+
+.footer {
+    background: url(../images/background_footer.jpg) no-repeat;
+    height: 89px;
+}
+
+.footer__logo
+{
+    font: 400 26px "Lora";
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.footer-menu__element {
+    font: 400 20px/1.6 "Oxygen";
+    color: #FFFFFF;
+    text-decoration: none;
+}
