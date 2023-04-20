@@ -3,7 +3,7 @@
     background-color: #F7F7F7;
     width: 100%;
     background-size: cover;
-    padding: 20px 0px 0px 0px;
+    padding: 20px 0 0; 
 }
 
 .article 
@@ -13,19 +13,35 @@
     background-size: cover;
 }
 
-.header_article
+/*.header_article
 {
     background-color: #F5F5F5;
+    width: 100%;
+    background-size: cover;
+}*/
+
+.header-top-block
+{
+    background: url(../images/background_article_mountains.jpg) no-repeat;
     width: 100%;
     background-size: cover;
 }
 
 .top-block 
 {
-    background: url(../images/background_article_mountains.jpg) no-repeat;
-    width: 100%;
-    background-size: cover;
-    padding: 20px 0px 169px 0px;
+    padding: 130px 0 169px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 20px 0 0;
+    max-width: 1440px;
 }
 
 .header__logo 
@@ -33,11 +49,19 @@
     font: 400 26px "Lora";
     color: #ffffff;
     text-decoration: none;
+    padding: 0 0 0 250px;
 }
 
 .header__logo_article 
 {
     color: #2E2E2E;
+}
+
+.header-menu
+{
+    display: flex;
+    column-gap: 40px;
+    padding: 0 270px 0 0;
 }
 
 .header-menu__element 
@@ -56,6 +80,7 @@
 {
     font: 400 50px/1.02 "Lora";
     color: #FFFFFF;
+    margin-bottom: 20px;
 }
 
 .top-block__quote 
@@ -63,6 +88,8 @@
     font: 400 17px/1.18 "Oxygen";
     color: #FFFFFF;
     opacity: 0.63;
+    margin-top: 0;
+    margin-bottom: 31px;
 }
 
 .top-block__button 
@@ -72,7 +99,7 @@
     color: #FFFFFF;
     background-color: #DD783F;
     border: 3px solid #DD783F;
-    padding: 12px 31px 12px 31px;
+    padding: 12px 31px; 
 }
 
 .average-menu 
@@ -80,7 +107,11 @@
     background-color: #ffffff;
     width: 100%;
     background-size: cover;
-    padding: 22px 0px 23px 0px;
+    padding: 22px 0px;
+    display: flex;
+    justify-content: center;
+    column-gap: 108px;
+
 }
 
 .average-menu__element 
@@ -90,12 +121,37 @@
     color: #768088;
 }
 
+.contents
+{
+    padding-bottom: 108px;
+}
+
+.featured-posts
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 20px;
+}
+
+.most-recent-posts
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 252px;
+    column-gap: 24px;
+    row-gap: 25px;
+}
+
 .featured-posts__title 
 {
     font: 400 20px/1.35 "Oxygen";
     max-width: 161px; 
     width: 100%; 
     border-bottom: 1px solid #DEDEDE;
+    margin: 60px 33% 23px;
+    padding: 0 0 16px 27px;
 }
 
 .most-recent-posts__title 
@@ -104,22 +160,27 @@
     max-width: 161px; 
     width: 100%; 
     border-bottom: 1px solid #DEDEDE;
+    margin: 67px 33% -3px;
+    padding: 0 0 16px 52px;
 }
 
 .featured-post
 {
-    height: 291px; 
-    background-color: #FFFFFF;
-    border: 3px solid #F7F7F7;
-    width: 296px; 
+    height: 280px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .most-recent-post
 {
-    height: 291px; 
+    min-height: 242px; 
     background-color: #FFFFFF;
-    border: 3px solid #F7F7F7;
     width: 296px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-self: stretch;
 }
 
 .featured-posts_the-road-ahead
@@ -140,6 +201,7 @@
 {
     font: 400 27px/1.11 "Lora";
     color: #FFFFFF;
+    padding-left: 20px;
 }
 
 .featured-post__description
@@ -147,21 +209,38 @@
     font: 400 14px/1.78 "Oxygen";
     color: #FFFFFF;
     opacity: 0.7;
+    padding-left: 20px;
+}
+
+.featured-post-signature 
+{
+    display: flex;
+    padding: 0 15px 15px;
+}
+
+.featured-post-signature-autor-and-date 
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 5px;
+    width: 384px;
 }
 
 .featured-post-signature__autor-image
 {
     border-radius: 50%;
+    margin: 5px 5px;
 }
 
-.featured-post-signature__autor-name
+.featured-post-signature-autor-and-date__autor-name
 {
     font: 400 11px/3.18 "Oxygen";
     color: #FFFFFF;
-    opacity: 0.7;
+    opacity: 0.7; 
 }
 
-.featured-post-signature__date
+.featured-post-signature-autor-and-date__date
 {
     font: 400 12px/2.91 "Oxygen";
     color: #FFFFFF;
@@ -171,33 +250,51 @@
 .most-recent-post-signature__image 
 {
     border-radius: 50%;
+    margin-left: 3%;
 }
 
 .most-recent-post__name
 {
     font: 400 16px/1.3125 "Lora";
     color: #101315;
+    padding-left: 13px;
+    margin: 14px 0 0;
 }
 
 .most-recent-post-signature 
 {
+    margin-top: auto;
     background-color: #FCFCFC;
-    border: 1px solid #F7F7F7;
+    border-top: 1px solid #F7F7F7;
+    padding: 7px 0 6px; 
+    display: flex;
+    align-items: center;
+    max-height: 48px;
+}
+
+.most-recent-post-signature-autor-and-date
+{
+    display: flex;
+    justify-content: space-between;
+    width: 257px;
+    padding: 0 13px 0 10px;
 }
 
 .most-recent-post__description
 {
     font: 400 13px/1.46 "Oxygen";
     color: #7A7A7A;
+    padding: 0 13px 0;
+    margin-top: 6px;
 }
 
-.most-recent-post-signature__autor-name
+.most-recent-post-signature-autor-and-date__autor-name
 {
     font: 400 12px/2.91 "Oxygen";
     color: #999999;
 }
 
-.most-recent-post-signature__date
+.most-recent-post-signature-autor-and-date__date
 {
     font: 400 12px/2.91 "Oxygen";
     color: #999999;
@@ -205,16 +302,20 @@
 
 .article-head 
 {
-    background-color: #F5F5F5;
+    background-color: #ffffff;
     width: 100%;
     background-size: cover;
-    padding: 1px 0px 0px 0px;
+    padding: 67.5px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .article-head__title 
 {
     font: 400 50px/1.02 "Lora";
     color: #2E2E2E;
+    margin-bottom: 20px;
 }
 
 .article-head__qoute
@@ -222,11 +323,21 @@
     font: 400 17px/1.17 "Oxygen";
     color: #2E2E2E;
     opacity: 0.63;
+    margin: 0 0 113px;
 }
 
 .article-head__image
 {
     width: 100%;
+}
+
+.article-paragraphs
+{
+    display: flex;
+    flex-direction: column;
+    background-color: #F7F7F7;
+    margin: 140px 240px 0;
+    padding-bottom: 135px;
 }
 
 .article-paragraphs__paragraph
@@ -240,19 +351,76 @@
     background: url(../images/background_footer.jpg) no-repeat;
     width: 100%;
     background-size: cover;
-    padding: 31px 0px 32px 0px;
-    display: flex;
-    flex-direction: row;
 }
 
-.footer__logo
+.footer-form
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-form__name
+{
+    font: 400 25px/1.2 "Oxygen";
+    color: #EFEFEF;
+    border-bottom: 1px solid #DEDEDE;
+    padding: 81px 0 15px 27px;
+    max-width: 188px; 
+    width: 100%;
+    margin: 0;
+}
+
+.footer-form-input-line
+{
+    display: flex;
+    align-items: center;
+    padding: 20px 0 89px;
+}
+
+.footer-form-input-line__imput-line
+{
+    background-color: #FFFFFF;
+    font: 400 12px/1.17 "Oxygen";
+    color: #817F83; 
+    padding: 18px 208px 18px 35px;
+    max-width: 375px;
+    margin: 0;
+}
+
+.footer-form-input-line__button
+{
+    background-color: rgba(255, 255, 255, 0.28);
+    font: 400 12px/1.17 "Oxygen";
+    color: #F8F8F8;
+    padding: 18px 43px 18px 44px;
+}
+
+.footer-navigation
+{
+    background-color: rgba(35, 47, 56, 0.6);
+    padding: 31px 0px; 
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;
+}
+
+.footer-navigation__logo
 {
     font: 400 26px "Lora";
     color: #FFFFFF;
     text-decoration: none;
+    margin-left: 250px; 
 }
 
-.footer-menu__element 
+.footer-navigation-menu
+{
+    display: flex;
+    column-gap: 20px;
+    margin-right: 250px; 
+}
+
+.footer-navigation-menu__element 
 {
     font: 400 11px/2.36 "Oxygen";
     color: #FFFFFF;
