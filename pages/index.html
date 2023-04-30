@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTf-8" >
+    <title>{{ .Title }}</title>
+    <link href="../static/css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="header-top-block">
+      <div class="header">
+        <a class="header__logo" href="#">Escape.</a>
+        <nav class="header-menu">
+          <a class="header-menu__element" href="#">HOME</a> 
+          <a class="header-menu__element" href="#">CATEGORIES</a>
+          <a class="header-menu__element" href="#">ABOUT</a>
+          <a class="header-menu__element" href="#">CONTACT</a>
+        </nav>
+      </div>
+      <div class="top-block">
+        <h1 class="top-block__title">Let's do it together.</h1>
+        <p class="top-block__quote">We travel the world in search of stories. Come along for the ride.</p>
+        <a class="top-block__button" href="#">View Latest Posts</a>
+      </div>
+    </div>
+    <nav class="average-menu">
+      <a class="average-menu__element" href="#">Nature</a> 
+      <a class="average-menu__element" href="#">Photography</a>
+      <a class="average-menu__element" href="#">Relaxation</a>
+      <a class="average-menu__element" href="#">Vacation</a>
+      <a class="average-menu__element" href="#">Travel</a>
+      <a class="average-menu__element" href="#">Adventure</a>
+    </nav>
+    <div class="contents">
+      <div class="featured-posts">
+        <h2 class="featured-posts__title">Featured Posts</h2>
+        {{ range .FeaturedPosts }}
+        <div class="featured-post featured-posts_the-road-ahead">
+          <span class="featured-post__name">{{ .Title }}</span>
+          <p class="featured-post__description">{{ .Subtitle }}</p>
+          <div class="featured-post-signature">
+            <img class="featured-post-signature__autor-image" src="../static/images/mat_vogels.jpg" alt="Mat Vogels" >
+            <div class="featured-post-signature-autor-and-date">
+              <span class="featured-post-signature-autor-and-date__autor-name">{{ .Author }}</span>
+              <span class="featured-post-signature-autor-and-date__date">{{ .PublishDate }}</span>
+            </div>  
+          </div>
+        </div>
+
+        <div class="featured-post featured-post_from-top-down">
+          <span class="featured-post__name">{{ .Title }}</span>
+          <p class="featured-post__description">{{ .Subtitle }}</p>
+          <div class="featured-post-signature">
+            <img class="featured-post-signature__autor-image" src="../static/images/william_wong.jpg" alt="William Wong" >
+            <div class="featured-post-signature-autor-and-date">
+              <span class="featured-post-signature-autor-and-date__autor-name">{{ .Author }}</span>
+              <span class="featured-post-signature-autor-and-date__date">{{ .PublishDate }}</span>
+            </div>  
+          </div>
+        </div>
+      </div>
+      {{end}}
+
+      <div class="most-recent-posts">
+
+        <h2 class="most-recent-posts__title">Most Recent</h2>
+        
+        <div class="most-recent-posts-blocks">
+          <div class="most-recent-post">
+            <img src="../static/images/still_tanding_tall.jpg" alt="balloons image" >
+            <h3 class="most-recent-post__name">Still Standing Tall</h3>
+            <p class="most-recent-post__description">Life begins at the end of your comfort zone.</p>
+            <div class="most-recent-post-signature">
+              <img class="most-recent-post-signature__image" src="../static/images/william_wong.jpg" alt="William Wong" >
+              <div class="most-recent-post-signature-autor-and-date">
+                <span class="most-recent-post-signature-autor-and-date__autor-name">William Wong</span>
+                <span class="most-recent-post-signature-autor-and-date__date">9/25/2015</span>
+              </div>  
+            </div>
+          </div>
+          <div class="most-recent-post">
+            <img src="../static/images/sunny_side_up.jpg" alt="bridge" >
+            <h3 class="most-recent-post__name">Sunny Side Up</h3>
+            <p class="most-recent-post__description">No place is ever as bad as they tell you it’s going to be.</p>
+            <div class="most-recent-post-signature">
+              <img class="most-recent-post-signature__image" src="../static/images/mat_vogels.jpg" alt="Mat Vogels" >
+              <div class="most-recent-post-signature-autor-and-date">
+                <span class="most-recent-post-signature-autor-and-date__autor-name">Mat Vogels</span>
+                <span class="most-recent-post-signature-autor-and-date__date">9/25/2015</span>
+              </div>
+            </div>
+          </div>
+          <div class="most-recent-post">
+            <img src="../static/images/water_falls.jpg" alt="lake" >
+            <h3 class="most-recent-post__name">Water Falls</h3>
+            <p class="most-recent-post__description">We travel not to escape life, but for life not to escape us.</p>
+            <div class="most-recent-post-signature">
+              <img class="most-recent-post-signature__image" src="../static/images/mat_vogels.jpg" alt="Mat Vogels" >
+              <div class="most-recent-post-signature-autor-and-date">
+                <span class="most-recent-post-signature-autor-and-date__autor-name">Mat Vogels</span>
+                <span class="most-recent-post-signature-autor-and-date__date">9/25/2015</span>
+              </div>
+            </div>
+          </div>
+          <div class="most-recent-post">
+            <img src="../static/images/throught_the_mist.jpg" alt="water" >
+            <h3 class="most-recent-post__name">Through the Mist</h3>
+            <p class="most-recent-post__description">Travel makes you see what a tiny place you occupy in the world.</p>
+            <div class="most-recent-post-signature">
+              <img class="most-recent-post-signature__image" src="../static/images/william_wong.jpg" alt="William Wong" >
+              <div class="most-recent-post-signature-autor-and-date">
+                <span class="most-recent-post-signature-autor-and-date__autor-name">William Wong</span>
+                <span class="most-recent-post-signature-autor-and-date__date">9/25/2015</span>
+              </div>
+            </div>
+          </div>
+          <div class="most-recent-post">
+            <img src="../static/images/awaken_early.jpg" alt="fog" >
+            <h3 class="most-recent-post__name">Awaken Early</h3>
+            <p class="most-recent-post__description">Not all those who wander are lost.</p>
+            <div class="most-recent-post-signature">
+              <img class="most-recent-post-signature__image" src="../static/images/mat_vogels.jpg" alt="Mat Vogels" >
+              <div class="most-recent-post-signature-autor-and-date">
+                <span class="most-recent-post-signature-autor-and-date__autor-name">Mat Vogels</span>
+                <span class="most-recent-post-signature-autor-and-date__date">9/25/2015</span>
+              </div>  
+            </div>
+          </div>
+          <div class="most-recent-post">
+            <img src="../static/images/try_it_always.jpg" alt="water fall" >
+            <h3 class="most-recent-post__name">Try it Always</h3>
+            <p class="most-recent-post__description">The world is a book, and those who do not travel read only one page.</p>
+            <div class="most-recent-post-signature">
+              <img class="most-recent-post-signature__image" src="../static/images/mat_vogels.jpg" alt="Mat Vogels" >
+              <div class="most-recent-post-signature-autor-and-date"> 
+                <span class="most-recent-post-signature-autor-and-date__autor-name">Mat Vogels</span>
+                <span class="most-recent-post-signature-autor-and-date__date">9/25/2015</span>
+              </div>  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer-form">
+        <h3 class="footer-form__name">Stay in Touch</h3>
+        <div class="footer-form-input-line">
+          <p class="footer-form-input-line__imput-line">Enter your email address</p>
+          <span class="footer-form-input-line__button">Submit</span>
+        </div>
+      </div>
+      <div class="footer-navigation">
+        <a class="footer-navigation__logo" href="index.html">Escape.</a>
+        <nav class="footer-navigation-menu">
+          <a class="footer-navigation-menu__element" href="#">HOME</a> 
+          <a class="footer-navigation-menu__element" href="#">CATEGORIES</a>
+          <a class="footer-navigation-menu__element" href="#">ABOUT</a>
+          <a class="footer-navigation-menu__element" href="#">CONTACT</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
