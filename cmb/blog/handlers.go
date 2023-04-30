@@ -46,13 +46,17 @@ func featuredPosts() []featuredPostData {
 		{
 			Title:       "The Road Ahead",
 			Subtitle:    "The road ahead might be paved - it might not be.",
+			ImgModifier: "featured-posts_the-road-ahead",
 			Author:      "Mat Vogels",
+			AuthorImg:   "../../static/images/mat_vogels.jpg",
 			PublishDate: "September 25, 2015",
 		},
 		{
 			Title:       "From Top Down",
 			Subtitle:    "Once a year, go someplace you’ve never been before.",
+			ImgModifier: "featured-post_from-top-down",
 			Author:      "William Wong",
+			AuthorImg:   "../../static/images/william_wong.jpg",
 			PublishDate: "September 25, 2015",
 		},
 	}

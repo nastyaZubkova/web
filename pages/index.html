@@ -36,31 +36,20 @@
       <div class="featured-posts">
         <h2 class="featured-posts__title">Featured Posts</h2>
         {{ range .FeaturedPosts }}
-        <div class="featured-post featured-posts_the-road-ahead">
+        <div class="featured-post {{.ImgModifier}}">
           <span class="featured-post__name">{{ .Title }}</span>
           <p class="featured-post__description">{{ .Subtitle }}</p>
           <div class="featured-post-signature">
-            <img class="featured-post-signature__autor-image" src="../static/images/mat_vogels.jpg" alt="Mat Vogels" >
+            <img class="featured-post-signature__autor-image" src="{{.AuthorImg}}" alt="Mat Vogels" >
             <div class="featured-post-signature-autor-and-date">
               <span class="featured-post-signature-autor-and-date__autor-name">{{ .Author }}</span>
               <span class="featured-post-signature-autor-and-date__date">{{ .PublishDate }}</span>
             </div>  
           </div>
         </div>
-
-        <div class="featured-post featured-post_from-top-down">
-          <span class="featured-post__name">{{ .Title }}</span>
-          <p class="featured-post__description">{{ .Subtitle }}</p>
-          <div class="featured-post-signature">
-            <img class="featured-post-signature__autor-image" src="../static/images/william_wong.jpg" alt="William Wong" >
-            <div class="featured-post-signature-autor-and-date">
-              <span class="featured-post-signature-autor-and-date__autor-name">{{ .Author }}</span>
-              <span class="featured-post-signature-autor-and-date__date">{{ .PublishDate }}</span>
-            </div>  
-          </div>
-        </div>
+        {{end}}
       </div>
-      {{end}}
+  
 
       <div class="most-recent-posts">
 
