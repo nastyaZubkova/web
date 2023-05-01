@@ -7,14 +7,24 @@ import (
 )
 
 type indexPage struct {
-	Title         string
-	FeaturedPosts []featuredPostData
+	Title           string
+	FeaturedPosts   []featuredPostData
+	MostResentPosts []mostResentPostData
 }
 
 type featuredPostData struct {
 	Title       string
 	Subtitle    string
 	ImgModifier string
+	Author      string
+	AuthorImg   string
+	PublishDate string
+}
+
+type mostResentPostData struct {
+	Title       string
+	Subtitle    string
+	Img         string
 	Author      string
 	AuthorImg   string
 	PublishDate string
@@ -29,8 +39,9 @@ func index(w http.ResponseWriter, r *http.Request) {
 	}
 
 	data := indexPage{
-		Title:         "Escape",
-		FeaturedPosts: featuredPosts(),
+		Title:           "Escape",
+		FeaturedPosts:   featuredPosts(),
+		MostResentPosts: mostResentPosts(),
 	}
 
 	err = ts.Execute(w, data) // Заставляем шаблонизатор вывести шаблон в тело ответа
@@ -58,6 +69,59 @@ func featuredPosts() []featuredPostData {
 			Author:      "William Wong",
 			AuthorImg:   "../../static/images/william_wong.jpg",
 			PublishDate: "September 25, 2015",
+		},
+	}
+}
+
+func mostResentPosts() []mostResentPostData {
+	return []mostResentPostData{
+		{
+			Title:       "Still Standing Tall",
+			Subtitle:    "Life begins at the end of your comfort zone.",
+			Img:         "../../static/images/still_tanding_tall.jpg",
+			Author:      "William Wong",
+			AuthorImg:   "../../static/images/william_wong.jpg",
+			PublishDate: "9/25/2015",
+		},
+		{
+			Title:       "Sunny Side Up",
+			Subtitle:    "No place is ever as bad as they tell you it’s going to be.",
+			Img:         "../../static/images/sunny_side_up.jpg",
+			Author:      "Mat Vogels",
+			AuthorImg:   "../../static/images/mat_vogels.jpg",
+			PublishDate: "9/25/2015",
+		},
+		{
+			Title:       "Water Falls",
+			Subtitle:    "We travel not to escape life, but for life not to escape us.",
+			Img:         "../../static/images/water_falls.jpg",
+			Author:      "Mat Vogels",
+			AuthorImg:   "../../static/images/mat_vogels.jpg",
+			PublishDate: "9/25/2015",
+		},
+		{
+			Title:       "Through the Mist",
+			Subtitle:    "Travel makes you see what a tiny place you occupy in the world.",
+			Img:         "../../static/images/throught_the_mist.jpg",
+			Author:      "William Wong",
+			AuthorImg:   "../../static/images/william_wong.jpg",
+			PublishDate: "9/25/2015",
+		},
+		{
+			Title:       "Awaken Early",
+			Subtitle:    "Not all those who wander are lost.",
+			Img:         "../../static/images/awaken_early.jpg",
+			Author:      "Mat Vogels",
+			AuthorImg:   "../../static/images/mat_vogels.jpg",
+			PublishDate: "9/25/2015",
+		},
+		{
+			Title:       "Try it Always",
+			Subtitle:    "The world is a book, and those who do not travel read only one page.",
+			Img:         "../../static/images/try_it_always.jpg",
+			Author:      "Mat Vogels",
+			AuthorImg:   "../../static/images/mat_vogels.jpg",
+			PublishDate: "9/25/2015",
 		},
 	}
 }

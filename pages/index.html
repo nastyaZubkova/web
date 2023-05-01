@@ -54,80 +54,21 @@
       <div class="most-recent-posts">
 
         <h2 class="most-recent-posts__title">Most Recent</h2>
-        
         <div class="most-recent-posts-blocks">
+          {{ range .MostResentPosts}}
           <div class="most-recent-post">
-            <img src="../static/images/still_tanding_tall.jpg" alt="balloons image" >
-            <h3 class="most-recent-post__name">Still Standing Tall</h3>
-            <p class="most-recent-post__description">Life begins at the end of your comfort zone.</p>
+            <img src="{{.Img}}" alt="balloons image" >
+            <h3 class="most-recent-post__name">{{ .Title }}</h3>
+            <p class="most-recent-post__description">{{ .Subtitle }}</p>
             <div class="most-recent-post-signature">
-              <img class="most-recent-post-signature__image" src="../static/images/william_wong.jpg" alt="William Wong" >
+              <img class="most-recent-post-signature__image" src="{{.AuthorImg}}" alt="William Wong" >
               <div class="most-recent-post-signature-autor-and-date">
-                <span class="most-recent-post-signature-autor-and-date__autor-name">William Wong</span>
-                <span class="most-recent-post-signature-autor-and-date__date">9/25/2015</span>
+                <span class="most-recent-post-signature-autor-and-date__autor-name">{{ .Author }}</span>
+                <span class="most-recent-post-signature-autor-and-date__date">{{ .PublishDate }}</span>
               </div>  
             </div>
           </div>
-          <div class="most-recent-post">
-            <img src="../static/images/sunny_side_up.jpg" alt="bridge" >
-            <h3 class="most-recent-post__name">Sunny Side Up</h3>
-            <p class="most-recent-post__description">No place is ever as bad as they tell you it’s going to be.</p>
-            <div class="most-recent-post-signature">
-              <img class="most-recent-post-signature__image" src="../static/images/mat_vogels.jpg" alt="Mat Vogels" >
-              <div class="most-recent-post-signature-autor-and-date">
-                <span class="most-recent-post-signature-autor-and-date__autor-name">Mat Vogels</span>
-                <span class="most-recent-post-signature-autor-and-date__date">9/25/2015</span>
-              </div>
-            </div>
-          </div>
-          <div class="most-recent-post">
-            <img src="../static/images/water_falls.jpg" alt="lake" >
-            <h3 class="most-recent-post__name">Water Falls</h3>
-            <p class="most-recent-post__description">We travel not to escape life, but for life not to escape us.</p>
-            <div class="most-recent-post-signature">
-              <img class="most-recent-post-signature__image" src="../static/images/mat_vogels.jpg" alt="Mat Vogels" >
-              <div class="most-recent-post-signature-autor-and-date">
-                <span class="most-recent-post-signature-autor-and-date__autor-name">Mat Vogels</span>
-                <span class="most-recent-post-signature-autor-and-date__date">9/25/2015</span>
-              </div>
-            </div>
-          </div>
-          <div class="most-recent-post">
-            <img src="../static/images/throught_the_mist.jpg" alt="water" >
-            <h3 class="most-recent-post__name">Through the Mist</h3>
-            <p class="most-recent-post__description">Travel makes you see what a tiny place you occupy in the world.</p>
-            <div class="most-recent-post-signature">
-              <img class="most-recent-post-signature__image" src="../static/images/william_wong.jpg" alt="William Wong" >
-              <div class="most-recent-post-signature-autor-and-date">
-                <span class="most-recent-post-signature-autor-and-date__autor-name">William Wong</span>
-                <span class="most-recent-post-signature-autor-and-date__date">9/25/2015</span>
-              </div>
-            </div>
-          </div>
-          <div class="most-recent-post">
-            <img src="../static/images/awaken_early.jpg" alt="fog" >
-            <h3 class="most-recent-post__name">Awaken Early</h3>
-            <p class="most-recent-post__description">Not all those who wander are lost.</p>
-            <div class="most-recent-post-signature">
-              <img class="most-recent-post-signature__image" src="../static/images/mat_vogels.jpg" alt="Mat Vogels" >
-              <div class="most-recent-post-signature-autor-and-date">
-                <span class="most-recent-post-signature-autor-and-date__autor-name">Mat Vogels</span>
-                <span class="most-recent-post-signature-autor-and-date__date">9/25/2015</span>
-              </div>  
-            </div>
-          </div>
-          <div class="most-recent-post">
-            <img src="../static/images/try_it_always.jpg" alt="water fall" >
-            <h3 class="most-recent-post__name">Try it Always</h3>
-            <p class="most-recent-post__description">The world is a book, and those who do not travel read only one page.</p>
-            <div class="most-recent-post-signature">
-              <img class="most-recent-post-signature__image" src="../static/images/mat_vogels.jpg" alt="Mat Vogels" >
-              <div class="most-recent-post-signature-autor-and-date"> 
-                <span class="most-recent-post-signature-autor-and-date__autor-name">Mat Vogels</span>
-                <span class="most-recent-post-signature-autor-and-date__date">9/25/2015</span>
-              </div>  
-            </div>
-          </div>
+          {{end}}
         </div>
       </div>
     </div>
