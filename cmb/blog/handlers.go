@@ -12,6 +12,10 @@ type indexPage struct {
 	MostResentPosts []mostResentPostData
 }
 
+type theRoadAheadPage struct {
+	Title string
+}
+
 type featuredPostData struct {
 	Title       string
 	Subtitle    string
@@ -50,6 +54,27 @@ func index(w http.ResponseWriter, r *http.Request) {
 		log.Println(err.Error())
 		return
 	}
+}
+
+func theRoadAhead(w http.ResponseWriter, r *http.Request) {
+	ts, err := template.ParseFiles("../../pages/the-road-ahead.html")
+	if err != nil {
+		http.Error(w, "Internal Server Error", 500) // В случае ошибки парсинга - возвращаем 500
+		log.Println(err.Error())                    // Используем стандартный логгер для вывода ошбики в консоль
+		return                                      // Не забываем завершить выполнение ф-ии
+	}
+
+	data := theRoadAheadPage{
+		Title: "the-road-ahead",
+	}
+
+	err = ts.Execute(w, data) // Заставляем шаблонизатор вывести шаблон в тело ответа
+	if err != nil {
+		http.Error(w, "Internal Server Error", 500)
+		log.Println(err.Error())
+		return
+	}
+
 }
 
 func featuredPosts() []featuredPostData {
