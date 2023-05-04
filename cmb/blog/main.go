@@ -15,7 +15,7 @@ func main() {
 	mux.HandleFunc("/post", theRoadAhead)
 
 	// Реализуем отдачу статики
-	mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("../../static"))))
+	mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 
 	log.Println("Start server " + port)
 	err := http.ListenAndServe(port, mux)
