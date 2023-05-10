@@ -4,6 +4,8 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+
+	"github.com/jmoiron/sqlx"
 )
 
 type indexPage struct {
@@ -17,12 +19,12 @@ type theRoadAheadPage struct {
 }
 
 type featuredPostData struct {
-	Title       string
-	Subtitle    string
-	ImgModifier string
-	Author      string
-	AuthorImg   string
-	PublishDate string
+	Title       string `db:"title"`
+	Subtitle    string `db:"subtitle"`
+	ImgModifier string `db:"image_url"`
+	Author      string `db:"author"`
+	AuthorImg   string `db:"author_url"`
+	PublishDate string `db:"publish_date"`
 }
 
 type mostResentPostData struct {
@@ -34,25 +36,37 @@ type mostResentPostData struct {
 	PublishDate string
 }
 
-func index(w http.ResponseWriter, r *http.Request) {
-	ts, err := template.ParseFiles("./pages/index.html") // Главная страница блога
-	if err != nil {
-		http.Error(w, "Internal Server Error", 500) // В случае ошибки парсинга - возвращаем 500
-		log.Println(err.Error())                    // Используем стандартный логгер для вывода ошбики в консоль
-		return                                      // Не забываем завершить выполнение ф-ии
-	}
+func index(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
 
-	data := indexPage{
-		Title:           "Escape",
-		FeaturedPosts:   featuredPosts(),
-		MostResentPosts: mostResentPosts(),
-	}
+		posts, err := featuredPosts(db)
+		if err != nil {
+			http.Error(w, "Internal Server Error", 500) // В случае ошибки парсинга - возвращаем 500
+			log.Println(err)
+			return // Не забываем завершить выполнение ф-ии
+		}
 
-	err = ts.Execute(w, data) // Заставляем шаблонизатор вывести шаблон в тело ответа
-	if err != nil {
-		http.Error(w, "Internal Server Error", 500)
-		log.Println(err.Error())
-		return
+		ts, err := template.ParseFiles("./pages/index.html") // Главная страница блога
+		if err != nil {
+			http.Error(w, "Internal Server Error", 500) // В случае ошибки парсинга - возвращаем 500
+			log.Println(err.Error())                    // Используем стандартный логгер для вывода ошбики в консоль
+			return                                      // Не забываем завершить выполнение ф-ии
+		}
+
+		data := indexPage{
+			Title:           "Escape",
+			FeaturedPosts:   posts,
+			MostResentPosts: mostResentPosts(),
+		}
+
+		err = ts.Execute(w, data) // Заставляем шаблонизатор вывести шаблон в тело ответа
+		if err != nil {
+			http.Error(w, "Internal Server Error", 500)
+			log.Println(err.Error())
+			return
+		}
+
+		log.Println("Request completed successfully")
 	}
 }
 
@@ -77,25 +91,28 @@ func theRoadAhead(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func featuredPosts() []featuredPostData {
-	return []featuredPostData{
-		{
-			Title:       "The Road Ahead",
-			Subtitle:    "The road ahead might be paved - it might not be.",
-			ImgModifier: "featured-posts_the-road-ahead",
-			Author:      "Mat Vogels",
-			AuthorImg:   "/static/images/mat_vogels.jpg",
-			PublishDate: "September 25, 2015",
-		},
-		{
-			Title:       "From Top Down",
-			Subtitle:    "Once a year, go someplace you’ve never been before.",
-			ImgModifier: "featured-post_from-top-down",
-			Author:      "William Wong",
-			AuthorImg:   "/static/images/william_wong.jpg",
-			PublishDate: "September 25, 2015",
-		},
+func featuredPosts(db *sqlx.DB) ([]featuredPostData, error) {
+	const query = `
+		SELECT
+			title,
+			subtitle,
+			image_url,
+			author,
+			author_url,
+			publish_date
+		FROM
+			post
+		WHERE featured = 1
+	` // Составляем SQL-запрос для получения записей для секции featured-posts
+
+	var posts []featuredPostData // Заранее объявляем массив с результирующей информацией
+
+	err := db.Select(&posts, query) // Делаем запрос в базу данных
+	if err != nil {                 // Проверяем, что запрос в базу данных не завершился с ошибкой
+		return nil, err
 	}
+
+	return posts, nil
 }
 
 func mostResentPosts() []mostResentPostData {
