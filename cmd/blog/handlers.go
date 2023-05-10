@@ -46,7 +46,7 @@ func index(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 			return // Не забываем завершить выполнение ф-ии
 		}
 
-		ts, err := template.ParseFiles("./pages/index.html") // Главная страница блога
+		ts, err := template.ParseFiles("../../pages/index.html") // Главная страница блога //изменила путь с ./pa... на этот, потому что дома отказывался работать
 		if err != nil {
 			http.Error(w, "Internal Server Error", 500) // В случае ошибки парсинга - возвращаем 500
 			log.Println(err.Error())                    // Используем стандартный логгер для вывода ошбики в консоль
@@ -71,7 +71,7 @@ func index(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 }
 
 func theRoadAhead(w http.ResponseWriter, r *http.Request) {
-	ts, err := template.ParseFiles("./pages/the-road-ahead.html")
+	ts, err := template.ParseFiles("../../pages/the-road-ahead.html") //аналогично, либо ноут тупит, либр вайфай, но дома работает только с таким путём
 	if err != nil {
 		http.Error(w, "Internal Server Error", 500) // В случае ошибки парсинга - возвращаем 500
 		log.Println(err.Error())                    // Используем стандартный логгер для вывода ошбики в консоль
