@@ -39,14 +39,14 @@ type mostResentPostData struct {
 func index(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 	return func(w http.ResponseWriter, r *http.Request) {
 
-		posts, err := featuredPosts(db)
+		featuredPosts, err := featuredPosts(db)
 		if err != nil {
 			http.Error(w, "Internal Server Error", 500) // В случае ошибки парсинга - возвращаем 500
 			log.Println(err)
 			return // Не забываем завершить выполнение ф-ии
 		}
 
-		posts2, err := mostResentPosts(db)
+		mostResentPosts, err := mostResentPosts(db)
 		if err != nil {
 			http.Error(w, "Internal Server Error", 500) // В случае ошибки парсинга - возвращаем 500
 			log.Println(err)
@@ -62,8 +62,8 @@ func index(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 
 		data := indexPage{
 			Title:           "Escape",
-			FeaturedPosts:   posts,
-			MostResentPosts: posts2,
+			FeaturedPosts:   featuredPosts,
+			MostResentPosts: mostResentPosts,
 		}
 
 		err = ts.Execute(w, data) // Заставляем шаблонизатор вывести шаблон в тело ответа
@@ -136,12 +136,12 @@ func mostResentPosts(db *sqlx.DB) ([]mostResentPostData, error) {
 		WHERE featured = 0
 	` // Составляем SQL-запрос для получения записей для секции most-resents-posts
 
-	var posts2 []mostResentPostData
+	var posts []mostResentPostData
 
-	err := db.Select(&posts2, query) // Делаем запрос в базу данных
-	if err != nil {                  // Проверяем, что запрос в базу данных не завершился с ошибкой
+	err := db.Select(&posts, query) // Делаем запрос в базу данных
+	if err != nil {                 // Проверяем, что запрос в базу данных не завершился с ошибкой
 		return nil, err
 	}
 
-	return posts2, nil
+	return posts, nil
 }
