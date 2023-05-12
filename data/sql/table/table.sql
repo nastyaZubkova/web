@@ -10,3 +10,6 @@ create table post (
     -> CHARACTER SET = utf8mb4
     -> COLLATE utf8mb4_unicode_ci
     -> ;
+
+alter table post add `content` TEXT NOT NULL;
+alter table post add `post_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY;
