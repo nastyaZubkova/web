@@ -262,9 +262,9 @@ where post_id = 6;
 
 use blog;
 update post
-set content = 'As a traveler, I have always believed in the adage that not all those who wander are lost. The journey itself is as important as the destination. One of my favorite things about traveling is experiencing the world wake up around me. There\'s something magical about being up early, watching the sun rise over a new place, seeing the locals begin their day, and feeling like you have the whole world to yourself.
+set content = 'As a traveler, I have always believed in the adage that not all those who wander are lost. The journey itself is as important as the destination. One of my favorite things about traveling is experiencing the world wake up around me. There’s something magical about being up early, watching the sun rise over a new place, seeing the locals begin their day, and feeling like you have the whole world to yourself.
 
-I call this particular journey, \"Awaken Early.\" It was a trip I took to the beautiful city of Cusco, Peru. Cusco is a city steeped in history and culture, with stunning architecture and ancient ruins at every turn. But what made this journey truly special was the early mornings.
+I call this particular journey, "Awaken Early." It was a trip I took to the beautiful city of Cusco, Peru. Cusco is a city steeped in history and culture, with stunning architecture and ancient ruins at every turn. But what made this journey truly special was the early mornings.
 
 Each day, I woke up before the sun rose and headed out to explore the city. The streets were quiet, the air crisp, and the sky slowly turning pink and orange. As I walked, I watched as shopkeepers began to set up their stalls, street vendors prepared their carts, and the first rays of sunlight illuminated the city\'s beautiful architecture.
 
